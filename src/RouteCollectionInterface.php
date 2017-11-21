@@ -20,25 +20,25 @@ interface RouteCollectionInterface
     public function groupRoutes(string $groupPrefix, callable $callable);
 
     public function patch(string $path, $responder, ?string $name = NULL,
-                          array $data = []): IRoute;
+                          array $data = []): RouteInterface;
 
     public function get(string $path, $responder, ?string $name = NULL,
-                        array $data = []): IRoute;
+                        array $data = []): RouteInterface;
 
     public function post(string $path, $responder, ?string $name = NULL,
-                         array $data = []): IRoute;
+                         array $data = []): RouteInterface;
 
     public function delete(string $path, $responder, ?string $name = NULL,
-                           array $data = []): IRoute;
+                           array $data = []): RouteInterface;
 
     public function options(string $path, $responder, ?string $name = NULL,
-                           array $data = []): IRoute;
+                           array $data = []): RouteInterface;
 
     public function head(string $path, $responder, ?string $name = NULL,
-                         array $data = []): IRoute;
+                         array $data = []): RouteInterface;
 
     public function put(string $path, $responder, ?string $name = NULL,
-                        array $data = []): IRoute;
+                        array $data = []): RouteInterface;
 
     public function mapOne(string $httpMethod, string $path, $responder,
                            ?string $name = NULL, array $data = []): RouteInterface;

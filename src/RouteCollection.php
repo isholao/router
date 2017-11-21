@@ -83,43 +83,43 @@ class RouteCollection implements RouteCollectionInterface
     }
 
     function patch(string $path, $responder, ?string $name = NULL,
-                   array $data = []): IRoute
+                   array $data = []): RouteInterface
     {
         return $this->mapOne('PATCH', $path, $responder, $name, $data);
     }
 
     function get(string $path, $responder, ?string $name = NULL,
-                 array $data = []): IRoute
+                 array $data = []): RouteInterface
     {
         return $this->mapOne('GET', $path, $responder, $name, $data);
     }
 
     function post(string $path, $responder, ?string $name = NULL,
-                  array $data = []): IRoute
+                  array $data = []): RouteInterface
     {
         return $this->mapOne('POST', $path, $responder, $name, $data);
     }
 
     function put(string $path, $responder, ?string $name = NULL,
-                 array $data = []): IRoute
+                 array $data = []): RouteInterface
     {
         return $this->mapOne('PUT', $path, $responder, $name, $data);
     }
 
     function delete(string $path, $responder, ?string $name = NULL,
-                    array $data = []): IRoute
+                    array $data = []): RouteInterface
     {
         return $this->mapOne('DELETE', $path, $responder, $name, $data);
     }
 
     function options(string $path, $responder, ?string $name = NULL,
-                    array $data = []): IRoute
+                    array $data = []): RouteInterface
     {
         return $this->mapOne('OPTIONS', $path, $responder, $name, $data);
     }
 
     function head(string $path, $responder, ?string $name = NULL,
-                  array $data = []): IRoute
+                  array $data = []): RouteInterface
     {
         return $this->mapOne('HEAD', $path, $responder, $name, $data);
     }
@@ -135,10 +135,10 @@ class RouteCollection implements RouteCollectionInterface
      * @param string|callable $responder Rule responder
      * @param string|NULL $name Name of the rule
      * @param array $data Route data
-     * @return IRoute
+     * @return RouteInterface
      */
     public function mapOne(string $httpMethod, string $path, $responder,
-                           ?string $name = NULL, array $data = []): IRoute
+                           ?string $name = NULL, array $data = []): RouteInterface
     {
         $this->validateHttpMethod($httpMethod);
         $this->validatePath($path);
@@ -227,7 +227,7 @@ class RouteCollection implements RouteCollectionInterface
      * 
      * @param string $httpMethod
      * @param string $uri
-     * @return RouteInterface|null
+     * @return RouteInterface|NULL
      */
     function dispatch(string $httpMethod, string $uri): ?RouteInterface
     {
@@ -450,7 +450,7 @@ class RouteCollection implements RouteCollectionInterface
      * @param string $uri HTTP URL to process
      * @param Route  $route information to process against
      */
-    protected static function processRoute(string $uri, IRoute &$route)
+    protected static function processRoute(string $uri, RouteInterface &$route)
     {
         if (\preg_match('#^' . $route->getPath() . '$#i', $uri))
         {
