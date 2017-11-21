@@ -41,7 +41,7 @@ interface RouteCollectionInterface
                         array $data = []): IRoute;
 
     public function mapOne(string $httpMethod, string $path, $responder,
-                           ?string $name = NULL, array $data = []): IRoute;
+                           ?string $name = NULL, array $data = []): RouteInterface;
 
     public function mapMany(string $httpMethods, string $path, $responder,
                             array $data = []);

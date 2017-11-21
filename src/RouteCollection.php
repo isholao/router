@@ -40,7 +40,7 @@ class RouteCollection implements RouteCollectionInterface
         static::$allowedHttpMethods[] = \strtoupper($http_method);
     }
 
-    public function addRoute(IRoute $route)
+    public function addRoute(RouteInterface $route)
     {
         $httpMethod = $route->getHttpMethod();
         if (!\in_array($httpMethod = \strtoupper($httpMethod),
@@ -227,9 +227,9 @@ class RouteCollection implements RouteCollectionInterface
      * 
      * @param string $httpMethod
      * @param string $uri
-     * @return \Router\IRoute|null
+     * @return RouteInterface|null
      */
-    function dispatch(string $httpMethod, string $uri): ?IRoute
+    function dispatch(string $httpMethod, string $uri): ?RouteInterface
     {
         return $this->exists($httpMethod, $uri, TRUE);
     }
