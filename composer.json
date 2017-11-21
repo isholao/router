@@ -1,0 +1,31 @@
+{
+    "name": "isholao/router",
+    "type": "library",
+    "description": "PHP request route",
+    "homepage": "https://github.com/isholao/router",
+    "keywords": ["routing", "router"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ishola Ogunseye",
+            "email": "ishola.tolu@outlook.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Isholao\\Router\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Isholao\\Router\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "v6.*"
+    }
+}
